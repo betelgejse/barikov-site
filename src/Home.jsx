@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Mail, Linkedin, Send, Briefcase, Settings2, GraduationCap, Mic, ExternalLink, UserCog, BarChart3, BrainCog, TrendingUp
+  Mail, Linkedin, Send, Briefcase, Settings2, UserCog, BarChart3, BrainCog, TrendingUp
 } from "lucide-react";
 
 const skills = [
@@ -73,6 +73,66 @@ export default function Home() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25 }}
+        >
+          <div className="flex items-center gap-2 mb-3">
+            <Briefcase size={22} className="text-neutral-400"/>
+            <h2 className="text-2xl font-medium">Опыт работы</h2>
+          </div>
+          <div className="space-y-4 text-neutral-800">
+            <div>
+              <strong>CEO — Вкусмил (Гроуфуд × Вкусвилл)</strong> · июнь 2023 — н.в.<br />
+              • Руководство брендом рационов готовой еды, развитие команды (30 человек), P&amp;L<br />
+              • Полный перезапуск продукта, улучшение качества, позиционирования и клиентского пути<br />
+              • Вывод юнит-экономики в плюс, рост бизнеса х2 ежегодно, выручка ~30 млн руб/мес<br />
+              • Внедрение AI-инструментов: аналитика, автоматизация, презентации, поддержка принятия решений
+            </div>
+            <div>
+              <strong>Директор по клиентскому сервису, коммуникациям и лояльности — Гроуфуд</strong> · январь 2020 — май 2023<br />
+              • Руководство контакт-центром, CRM-маркетингом, качеством сервиса<br />
+              • Внедрение и развитие системы NPS (рост с 25% до 50%), систематизация обратной связи<br />
+              • Выстраивание CRM-стратегии, автоматизация коммуникаций, аналитика клиентских данных
+            </div>
+            <div>
+              <strong>Руководитель CRM маркетинга и клиентского опыта — Гроуфуд</strong> · сентябрь 2018 — декабрь 2019<br />
+              • Разработка стратегий удержания и возврата клиентов, рост LTV, ARPPU<br />
+              • Запуск коммуникационной платформы, развитие новых каналов<br />
+              • Построение системы аналитики, ведение бэклога гипотез, тестирование
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Навыки */}
+        <motion.div
+          className="bg-white rounded-2xl shadow-xl px-8 py-8"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35 }}
+        >
+          <div className="flex items-center gap-2 mb-3">
+            <Settings2 size={22} className="text-neutral-400"/>
+            <h2 className="text-2xl font-medium">Навыки</h2>
+          </div>
+          <ul className="flex flex-wrap gap-3 text-base">
+            {skills.map(({icon, label}, i) => (
+              <li
+                key={label}
+                className="bg-neutral-100 border rounded-xl px-4 py-2 flex items-center gap-2 shadow-sm"
+              >
+                {icon}{label}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      </section>
+
+      {/* Футер */}
+      <footer className="mt-16 text-sm text-neutral-500 text-center w-full">
+        Михаил Бариков · Москва · 2025
+      </footer>
+    </main>
+  );
+}
+
         >
 
 
