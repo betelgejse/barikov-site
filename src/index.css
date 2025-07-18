@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Можно добавить свои стили ниже */
 body {
   font-family: 'Inter', 'Segoe UI', 'Arial', sans-serif;
+  background: #fff;
 }
+
