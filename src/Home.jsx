@@ -41,5 +41,39 @@ export default function Home() {
           <a href="https://t.me/betelgejse" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 px-3 py-1 rounded-lg bg-neutral-50 border hover:bg-blue-50 transition text-blue-600">
             <Send size={18}/>Telegram
           </a>
+          <a href="mailto:m.barikov@yandex.ru" className="flex items-center gap-1 px-3 py-1 rounded-lg bg-neutral-50 border hover:bg-blue-50 transition text-blue-600">
+            <Mail size={18}/>Email
+          </a>
+        </div>
+      </motion.div>
+
+      {/* Карточки секций */}
+      <section className="max-w-2xl w-full space-y-8">
+        {/* О себе */}
+        <motion.div
+          className="bg-white rounded-2xl shadow-xl px-8 py-8"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.15 }}
+        >
+          <div className="flex items-center gap-2 mb-3">
+            <UserCog size={22} className="text-neutral-400"/>
+            <h2 className="text-2xl font-medium">О себе</h2>
+          </div>
+          <div className="text-base text-neutral-800 leading-relaxed">
+            Руководитель и продуктовый лидер в foodtech, эксперт по запуску и масштабированию подписочных сервисов. Сейчас — CEO бренда Вкусмил (Гроуфуд × Вкусвилл): управляю развитием продукта, командой, экономикой и клиентским опытом. Фокус на устойчивом росте, эффективности и ценности для клиента.<br /><br />
+            В работе соединяю стратегию, аналитику и современные инструменты: BI (Google Sheets), автоматизацию, AI (ChatGPT). Регулярно тестирую гипотезы, строю процессы на основе данных, внедряю лучшие практики retention и коммуникаций.<br /><br />
+            Английским владею только на уровне работы с помощью AI-инструментов (чтение, письменная коммуникация с поддержкой переводчиков/ChatGPT).
+          </div>
+        </motion.div>
+
+        {/* Опыт */}
+        <motion.div
+          className="bg-white rounded-2xl shadow-xl px-8 py-8"
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25 }}
+        >
+
 
 
