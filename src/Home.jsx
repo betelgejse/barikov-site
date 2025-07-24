@@ -65,7 +65,7 @@ export default function Home() {
           transition={{ delay: 0.15 }}
         >
           <div className="flex items-center gap-2 mb-3">
-            <Briefcase size={22} className="text-neutral-400" />
+          <Briefcase size={22} className="text-neutral-400" />
             <h2 className="text-xl font-medium">О себе</h2>
           </div>
           <div className="space-y-4 text-neutral-800">
@@ -168,8 +168,8 @@ export default function Home() {
             <Settings2 size={22} className="text-neutral-400" />
             <h2 className="text-xl font-medium">Навыки</h2>
           </div>
-          <ul className="flex flex-wrap gap-3 text-base">
-            {    {skills.map(({ icon, label }) => (
+          <u className="flex flex-wrap gap-3 text-base">
+                {skills.map(({ icon, label }) => (
       <li key={label} className="bg-neutral-100 border rounded-xl px-4 py-2 flex items-center gap-2 shadow-sm">
         {icon}
         {label}
