@@ -1,7 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Mail, Linkedin, Send, Briefcase, Settings2, UserCog, BarChart3, BrainCog, TrendingUp
+  Mail,
+  Linkedin,
+  Send,
+  Briefcase,
+  Settings2,
+  UserCog,
+  BarChart3,
+  BrainCog,
+  TrendingUp,
 } from "lucide-react";
 
 const skills = [
@@ -10,46 +18,46 @@ const skills = [
   { icon: <UserCog size={18} />, label: "CRM и программы лояльности" },
   { icon: <Settings2 size={18} />, label: "Оптимизация процессов" },
   { icon: <TrendingUp size={18} />, label: "E-commerce" },
-  { icon: <Briefcase size={18} />, label: "Управление проектами" },
-  { icon: <BarChart3 size={18} />, label: "Аналитика, unit-экономика" },
-  { icon: <BrainCog size={18} />, label: "AI-инструменты (ChatGPT)" },
-  { icon: <Settings2 size={18} />, label: "Agile, Scrum" },
-  { icon: <Briefcase size={18} />, label: "Запуск новых продуктов" },
-  { icon: <UserCog size={18} />, label: "Управление командой" },
-  { icon: <BarChart3 size={18} />, label: "BI (Google Sheets, Exponea)" },
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-neutral-100 flex flex-col items-center py-12 px-4">
+    <main className="p-4 md:p-8 space-y-8 max-w-4xl mx-auto">
       {/* Профиль */}
-      <motion.div
-        className="max-w-2xl w-full flex flex-col items-center gap-4 bg-white shadow-2xl rounded-2xl px-8 py-10 mb-12"
-        initial={{ y: 40, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.7, type: "spring" }}
+      <section
+        id="profile"
+        className="flex flex-col items-center text-center space-y-4"
       >
-        <div className="w-24 h-24 rounded-full bg-neutral-200 flex items-center justify-center text-3xl font-bold mb-2 text-neutral-500">МБ</div>
-        <h1 className="text-4xl font-semibold text-center tracking-tight mb-2">Михаил Бариков</h1>
-        <div className="text-lg text-neutral-600 text-center mb-1">
+        <div className="w-24 h-24 rounded-full bg-neutral-200"></div>
+        <h1 className="text-3xl font-bold">МБ</h1>
+        <h2 className="text-xl">Михаил Бариков</h2>
+        <p className="text-neutral-500">
           CEO бренда Вкусмил (Foodtech, подписочные сервисы, AI)
+        </p>
+        <div className="flex gap-4">
+          <a
+            href="mailto:info@example.com"
+            className="text-neutral-500 hover:text-neutral-800"
+          >
+            <Mail size={24} />
+          </a>
+          <a
+            href="https://t.me/"
+            className="text-neutral-500 hover:text-neutral-800"
+          >
+            <Send size={24} />
+          </a>
+          <a
+            href="https://www.linkedin.com/"
+            className="text-neutral-500 hover:text-neutral-800"
+          >
+            <Linkedin size={24} />
+          </a>
         </div>
-        <div className="flex flex-row gap-3 mb-2">
-          <a href="https://www.linkedin.com/in/mikhail-barikov-0841b636" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 px-3 py-1 rounded-lg bg-neutral-50 border hover:bg-blue-50 transition text-blue-600">
-            <Linkedin size={18}/>LinkedIn
-          </a>
-          <a href="https://t.me/betelgejse" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 px-3 py-1 rounded-lg bg-neutral-50 border hover:bg-blue-50 transition text-blue-600">
-            <Send size={18}/>Telegram
-          </a>
-          <a href="mailto:m.barikov@yandex.ru" className="flex items-center gap-1 px-3 py-1 rounded-lg bg-neutral-50 border hover:bg-blue-50 transition text-blue-600">
-            <Mail size={18}/>Email
-          </a>
-        </div>
-      </motion.div>
+      </section>
 
-      {/* Карточки секций */}
-      <section className="max-w-2xl w-full space-y-8">
-        {/* О себе */}
+      {/* О себе */}
+      <section id="about">
         <motion.div
           className="bg-white rounded-2xl shadow-xl px-8 py-8"
           initial={{ opacity: 0, y: 40 }}
@@ -57,17 +65,33 @@ export default function Home() {
           transition={{ delay: 0.15 }}
         >
           <div className="flex items-center gap-2 mb-3">
-            <UserCog size={22} className="text-neutral-400"/>
-            <h2 className="text-2xl font-medium">О себе</h2>
+            <Briefcase size={22} className="text-neutral-400" />
+            <h2 className="text-xl font-medium">О себе</h2>
           </div>
-          <div className="text-base text-neutral-800 leading-relaxed">
-            Руководитель и продуктовый лидер в foodtech, эксперт по запуску и масштабированию подписочных сервисов. Сейчас — CEO бренда Вкусмил (Гроуфуд × Вкусвилл): управляю развитием продукта, командой, экономикой и клиентским опытом. Фокус на устойчивом росте, эффективности и ценности для клиента.<br /><br />
-            В работе соединяю стратегию, аналитику и современные инструменты: BI (Google Sheets), автоматизацию, AI (ChatGPT). Регулярно тестирую гипотезы, строю процессы на основе данных, внедряю лучшие практики retention и коммуникаций.<br /><br />
-            Английским владею только на уровне работы с помощью AI-инструментов (чтение, письменная коммуникация с поддержкой переводчиков/ChatGPT).
+          <div className="space-y-4 text-neutral-800">
+            <p>
+              Руководитель и продуктовый лидер в foodtech, эксперт по запуску и
+              масштабированию подписочных сервисов. Сейчас — CEO бренда
+              Вкусмил (Гроуфуд × Вкусвилл): управляю развитием продукта,
+              командой, экономикой и клиентским опытом. Фокус на устойчивом
+              росте, эффективности и ценности для клиента.
+            </p>
+            <p>
+              В работе соединяю стратегию, аналитику и современные
+              инструменты: BI (Google Sheets), автоматизацию, AI (ChatGPT).
+              Регулярно тестирую гипотезы, строю процессы на основе данных,
+              внедряю лучшие практики retention и коммуникаций.
+            </p>
+            <p>
+              Английским владею на уровне чтения и письменной коммуникации с
+              поддержкой переводчиков и AI‑инструментов.
+            </p>
           </div>
         </motion.div>
+      </section>
 
-        {/* Опыт */}
+      {/* Опыт */}
+      <section id="experience">
         <motion.div
           className="bg-white rounded-2xl shadow-xl px-8 py-8"
           initial={{ opacity: 0, y: 40 }}
@@ -75,33 +99,65 @@ export default function Home() {
           transition={{ delay: 0.25 }}
         >
           <div className="flex items-center gap-2 mb-3">
-            <Briefcase size={22} className="text-neutral-400"/>
-            <h2 className="text-2xl font-medium">Опыт работы</h2>
+            <Briefcase size={22} className="text-neutral-400" />
+            <h2 className="text-xl font-medium">Опыт работы</h2>
           </div>
-          <div className="space-y-4 text-neutral-800">
+          <div className="space-y-6 text-neutral-800">
             <div>
-              <strong>CEO — Вкусмил (Гроуфуд × Вкусвилл)</strong> · июнь 2023 — н.в.<br />
-              • Руководство брендом рационов готовой еды, развитие команды (30 человек), P&amp;L<br />
-              • Полный перезапуск продукта, улучшение качества, позиционирования и клиентского пути<br />
-              • Вывод юнит-экономики в плюс, рост бизнеса х2 ежегодно, выручка ~30 млн руб/мес<br />
-              • Внедрение AI-инструментов: аналитика, автоматизация, презентации, поддержка принятия решений
+              <strong>CEO — Вкусмил (Гроуфуд × Вкусвилл)</strong> · июнь 2023 — н. в.<br />
+              <ul className="list-disc ml-5 space-y-1">
+                <li>
+                  Руководство брендом рационов готовой еды, развитие команды (30 человек), P&L
+                </li>
+                <li>
+                  Полный перезапуск продукта, улучшение качества, позиционирования
+                  и клиентского пути
+                </li>
+                <li>
+                  Вывод юнит‑экономики в плюс, рост бизнеса x2 ежегодно, выручка ~30 млн руб/мес
+                </li>
+                <li>
+                  Внедрение AI‑инструментов: аналитика, автоматизация, презентации,
+                  поддержка принятия решений
+                </li>
+              </ul>
             </div>
             <div>
-              <strong>Директор по клиентскому сервису, коммуникациям и лояльности — Гроуфуд</strong> · январь 2020 — май 2023<br />
-              • Руководство контакт-центром, CRM-маркетингом, качеством сервиса<br />
-              • Внедрение и развитие системы NPS (рост с 25% до 50%), систематизация обратной связи<br />
-              • Выстраивание CRM-стратегии, автоматизация коммуникаций, аналитика клиентских данных
+              <strong>
+                Директор по клиентскому сервису, коммуникациям и лояльности — Гроуфуд
+              </strong>{" "}
+              · январь 2020 — май 2023<br />
+              <ul className="list-disc ml-5 space-y-1">
+                <li>Руководство контакт‑центром, CRM‑маркетингом, качеством сервиса</li>
+                <li>
+                  Внедрение и развитие системы NPS (рост с 25 % до 50 %),
+                  систематизация обратной связи
+                </li>
+                <li>
+                  Выстраивание CRM‑стратегии, автоматизация коммуникаций, аналитика
+                  клиентских данных
+                </li>
+              </ul>
             </div>
             <div>
-              <strong>Руководитель CRM маркетинга и клиентского опыта — Гроуфуд</strong> · сентябрь 2018 — декабрь 2019<br />
-              • Разработка стратегий удержания и возврата клиентов, рост LTV, ARPPU<br />
-              • Запуск коммуникационной платформы, развитие новых каналов<br />
-              • Построение системы аналитики, ведение бэклога гипотез, тестирование
+              <strong>
+                Руководитель CRM‑маркетинга и клиентского опыта — Гроуфуд
+              </strong>{" "}
+              · сентябрь 2018 — декабрь 2019<br />
+              <ul className="list-disc ml-5 space-y-1">
+                <li>Разработка стратегий удержания и возврата клиентов, рост LTV, ARPPU</li>
+                <li>Запуск коммуникационной платформы, развитие новых каналов</li>
+                <li>
+                  Построение системы аналитики, ведение бэклога гипотез, тестирование
+                </li>
+              </ul>
             </div>
           </div>
         </motion.div>
+      </section>
 
-        {/* Навыки */}
+      {/* Навыки */}
+      <section id="skills">
         <motion.div
           className="bg-white rounded-2xl shadow-xl px-8 py-8"
           initial={{ opacity: 0, y: 40 }}
@@ -109,16 +165,17 @@ export default function Home() {
           transition={{ delay: 0.35 }}
         >
           <div className="flex items-center gap-2 mb-3">
-            <Settings2 size={22} className="text-neutral-400"/>
-            <h2 className="text-2xl font-medium">Навыки</h2>
+            <Settings2 size={22} className="text-neutral-400" />
+            <h2 className="text-xl font-medium">Навыки</h2>
           </div>
           <ul className="flex flex-wrap gap-3 text-base">
-            {skills.map(({icon, label}, i) => (
+            {skills.map(({ icon, label }) => (
               <li
                 key={label}
                 className="bg-neutral-100 border rounded-xl px-4 py-2 flex items-center gap-2 shadow-sm"
               >
-                {icon}{label}
+                {icon}
+                {label}
               </li>
             ))}
           </ul>
@@ -126,14 +183,10 @@ export default function Home() {
       </section>
 
       {/* Футер */}
-      <footer className="mt-16 text-sm text-neutral-500 text-center w-full">
-        Михаил Бариков · Москва · 2025
+      <footer className="mt-16 text-neutral-500 text-center w-full">
+        Михаил Бариков · Москва · 2025
       </footer>
     </main>
   );
 }
-
-        >
-
-
 
